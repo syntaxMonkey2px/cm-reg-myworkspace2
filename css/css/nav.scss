@@ -1,0 +1,133 @@
+
+$color: #616060;
+$nav-height:44px;
+$bar-height:4px;
+$background:#fff;
+
+$fg-hover:#000;
+$bg-hover: #caf1ca;
+$color-select:#000;
+$breakpoint:600px;
+
+nav {
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	color:white;
+	height: var(--nav-height);
+	background: var(--primary-reg-col);
+
+	a.logo {
+		background:white;
+		img {
+			height: $nav-height;
+		}
+	}
+	ul {
+		margin-right:auto;
+		padding:0;
+		li {
+			display:inline-block;
+			transition-duration: 0.3s;
+			list-style: none;
+			padding:0.8em 0.8em;
+			margin:0 1.2em;
+			cursor: pointer;
+			ul {
+				margin-top: 1rem;
+				display:none;
+			}
+			&:hover {
+				color:black;
+				background: $bg-hover;
+				position:relative;
+				ul {
+					background:white;
+					position:absolute;
+					left:0;
+					top:2.8em;
+					width:200px;
+					display:flex;
+					flex-direction: column;
+					padding:0 0.2em;
+					margin:0;
+					li {
+						margin:0;
+						outline:1px solid transparent;
+						&:hover {
+							background: $bg-hover;
+
+							outline:1px solid #aaa;
+						}
+					}
+				}
+			}
+
+			a {
+				color:white;
+				text-decoration: none;
+			}
+			&.active {
+				a {
+					color: $color-select;
+				}
+			}
+		}
+		@media screen and (max-width: $breakpoint) {
+			display:none;
+		}
+	}
+
+	section.menu {
+		background: $background;
+		cursor: pointer;
+		padding: 2px;
+
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		margin: 0 0.5em 0 0;
+		border-radius: 5px;
+
+		.menu-bar {
+			width: 80%;
+			height: $bar-height;
+			margin: 3px auto;
+			border-radius: 3px;
+			background: $color;
+		}
+
+		&.active {
+			background: #575757;
+			.menu-bar {
+				background: white;
+			}
+		}
+		@media screen and (min-width: $breakpoint) {
+			display:none;
+		}
+	}
+}
+
+section.menu-click {
+	display: none;
+	&.active {
+		display: block;
+	}
+	width: 100%;
+	padding: 5px 0;
+	margin-bottom: 10px;
+	text-align: center;
+	background: #6aa;
+	margin-left:auto;
+
+	li {
+		display:block;
+		color:white;
+		padding:3px;
+	}
+
+	@media screen and (max-width: $breakpoint) {
+		display:none;
+	}
+}

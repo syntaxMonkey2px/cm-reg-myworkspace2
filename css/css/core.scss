@@ -1,0 +1,72 @@
+@use 'tiny-grid';
+@use 'nav';
+@use 'bootstrap-shim';
+
+/** core variables **/
+$nav-height: 44px;
+
+:root {
+	--nav-col: #fff; 		     	// Primary Nav colour
+	--primary-col: #e6f6e5;      	// Primary colour
+	--primary-reg-col: #015c57; 	// Primary FreeREG colour
+	--primary-back: white;    		// Primary background
+	--primary-accent-col: #517481;
+	--primary-accent-font-col: #364d55;
+
+	--reg-back: #007fad;
+	--reg-col: #b8ecff;
+
+	--error-col: #d80000;
+	--success-col: #009000;
+
+	--gutter: 10px;
+
+	font-family: 'Open Sans', sans-serif;
+	--nav-height: 44px;
+}
+
+// high level pan-project styling
+body {
+	margin: 0;
+	background-color: var(--primary-back);
+}
+
+a {
+	color: var(--primary-reg-col);
+}
+
+button, a.btn, select {
+	background: var(--primary-reg-col);
+	color:white;
+	padding:0.6em 1.2em;
+	text-align:center;
+	border-radius: 5px;
+}
+
+table {
+	background: lightgrey;
+	border:none;
+	border-collapse: collapse;
+	thead {
+		background:lightgrey;
+		color:black;
+		font-weight:normal;
+		th {
+			padding: 0.3em;
+			text-align:left;
+		}
+	}
+	tbody {
+		background: white;
+		td {
+			text-align:left;
+		}
+	}
+}
+
+/* utility classes */
+.gutter 	{ margin:0 var(--gutter); }
+.error 	{ color: var(--error-col); }
+.success { color: var(--success-col); }
+.none 	{ display:none; }
+.block 	{ display:block; }

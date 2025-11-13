@@ -1,0 +1,1 @@
+<?php echo class_exists('Locale') ? 'LOCALE: YES' : 'LOCALE: NO';
